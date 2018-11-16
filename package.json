@@ -1,0 +1,28 @@
+{
+  "name": "testerinktool-api",
+  "version": "1.0.0",
+  "description": "An app to supply a simple Restful API implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.348.0",
+    "bluebird": "^3.5.2",
+    "body-parser": "^1.18.3",
+    "busboy": "^0.2.14",
+    "busboy-body-parser": "^0.3.2",
+    "connect-busboy": "0.0.2",
+    "cors": "^2.8.4",
+    "express-fileupload": "^1.0.0",
+    "file-type": "^10.4.0",
+    "keymirror": "^0.1.1",
+    "mongoose": "^5.3.6",
+    "multiparty": "^4.2.1"
+  }
+}
