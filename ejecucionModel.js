@@ -14,6 +14,10 @@ var ejecucionSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    tipo: {
+        type: String,
+        required: true
+    },
     resultados: {
         type: String,
         required: false
