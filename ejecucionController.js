@@ -30,8 +30,8 @@ exports.index = function (req, res) {
                 message: "Consulta de colección de ejecuciones",
                 data: ejecuciones
             });
-        }
-    });
+        });
+    }
 };
 // Handle create app actions
 exports.new = function (req, res) {
