@@ -10,10 +10,6 @@ var ejecucionSchema = mongoose.Schema({
         type: String,
         required:true
     },
-    prueba:{
-        type: String,
-        required: true
-    },
     estado: {
         type: String,
         required: true
