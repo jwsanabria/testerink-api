@@ -3,18 +3,34 @@
 Ejecucion = require('./ejecucionModel');
 // Handle index actions
 exports.index = function (req, res) {
-    Ejecucion.get(function (err, ejecuciones) {
-        if (err) {
+    if(req.query && req.query.estado){
+        Ejecucion.find({estado:req.query.estado}, function (err, ejecuciones) {
+            if (err){
+                res.json({
+                    status: "error",
+                    message: err,
+                });
+            }
             res.json({
-                status: "error",
-                message: err,
+                status: "success",
+                message: "Consulta de colección de ejecuciones por estado",
+                data: ejecuciones
+            });
+        });
+    }else{
+        Ejecucion.get(function (err, ejecuciones) {
+            if (err) {
+                res.json({
+                    status: "error",
+                    message: err,
+                });
+            }
+            res.json({
+                status: "success",
+                message: "Consulta de colección de ejecuciones",
+                data: ejecuciones
             });
         }
-        res.json({
-            status: "success",
-            message: "Consulta de colección de ejecuciones",
-            data: ejecuciones
-        });
     });
 };
 // Handle create app actions
