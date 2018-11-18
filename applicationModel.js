@@ -1,17 +1,18 @@
 // applicationModel.js
 var mongoose = require('mongoose');
 // Setup schema
-var aplicacionSchema = mongoose.Schema({
-    nombre: {
+var aplicationSchema = mongoose.Schema({
+    name: {
         type: String,
         required: true
     },
-    tipo: {
+    type: {
         type: String,
-        required: true
+        required: true,
+        enum: ['Web','Movil']
     },
     version: String,
-    url_pruebas: String,
+    url_test: String,
     url_github: String,
     url_apk: String,
     create_date: {
@@ -19,8 +20,8 @@ var aplicacionSchema = mongoose.Schema({
         default: Date.now
     }
 });
-// Export Aplicacion model
-var Aplicacion = module.exports = mongoose.model('aplicacion', aplicacionSchema);
+// Export Aplication model
+var Aplication = module.exports = mongoose.model('aplication', aplicationSchema);
 module.exports.get = function (callback, limit) {
-    Aplicacion.find(callback).limit(limit);
+    Aplication.find(callback).limit(limit);
 }

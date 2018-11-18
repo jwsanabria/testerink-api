@@ -9,51 +9,57 @@ router.get('/', function (req, res) {
         message: 'Welcome to RESTHub crafted with love!',
     });
 });
+
+// Import S3 controller
+var s3Controller = require('./s3Controller');
+router.post('/upload')
+    .post(s3Controller.upload);
+
 // Import app controller
 var appController = require('./applicationController');
 // Aplicacion routes
 router.route('/apps')
     .get(appController.index)
     .post(appController.new);
-router.route('/apps/:aplicacion_id')
+router.route('/apps/:aplication_id')
     .get(appController.view)
     .patch(appController.update)
     .put(appController.update)
     .delete(appController.delete);
 
 // Import test controller
-var setPruebasController = require('./setPruebasController');
-// Aplicacion routes
-router.route('/setPruebas')
-    .get(setPruebasController.index)
-    .post(setPruebasController.new);
-router.route('/setPruebas/:setPruebas_id')
-    .get(setPruebasController.view)
-    .delete(setPruebasController.delete);
+var testController = require('./testController');
+// Test routes
+router.route('/test')
+    .get(testController.index)
+    .post(testController.new);
+router.route('/test/:test_id')
+    .get(testController.view)
+    .delete(testController.delete);
 
-    // Import ejecucion controller
-var ejecucionController = require('./ejecucionController');
-// Aplicacion routes
-router.route('/ejecucion')
-    .get(ejecucionController.index)
-    .post(ejecucionController.new);
-router.route('/ejecucion/:ejecucion_id')
-    .get(ejecucionController.view)
-    .patch(ejecucionController.update)
-    .put(ejecucionController.update)
-    .delete(ejecucionController.delete);
+    // Import execution controller
+var executionController = require('./executionController');
+// Execution routes
+router.route('/execution')
+    .get(executionController.index)
+    .post(executionController.new);
+router.route('/execution/:execution_id')
+    .get(executionController.view)
+    .patch(executionController.update)
+    .put(executionController.update)
+    .delete(executionController.delete);
 
 
-// Import ejecucion controller
-var resultadoController = require('./resultadoController');
-// Aplicacion routes
-router.route('/resultado')
-    .get(resultadoController.index)
-    .post(resultadoController.new);
-router.route('/resultado/:resultado_id')
-    .get(resultadoController.view)
-    .patch(resultadoController.update)
-    .put(resultadoController.update)
-    .delete(resultadoController.delete);
+// Import execution controller
+var resultController = require('./resultController');
+// Result routes
+router.route('/result')
+    .get(resultController.index)
+    .post(resultController.new);
+router.route('/result/:result_id')
+    .get(resultController.view)
+    .patch(resultController.update)
+    .put(resultController.update)
+    .delete(resultController.delete);
     // Export API routes
 module.exports = router;
