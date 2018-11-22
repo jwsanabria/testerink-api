@@ -22,8 +22,12 @@ exports.new = function (req, res) {
     var tests = new Test(req.body);
     // save the test and check for errors
     tests.save(function (err) {
-        if (err)
-             res.json(err);
+        if (err){
+            res.json({
+                status: "error",
+                message: err
+            });
+        }
         res.json({
             message: 'New tests registered!',
             data: tests
