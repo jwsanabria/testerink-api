@@ -35,7 +35,6 @@ var testSchema = mongoose.Schema({
             apk_path: String,
             generate_data: Boolean,
             package_name: String,
-            ​​​
             screenshot_pairs: [
                 {
                     before:String,
@@ -43,9 +42,8 @@ var testSchema = mongoose.Schema({
                     result:String
                 }
             ],
-            ​​​
             vrt_config: {
-                past_execution_id:String
+                past_execution_id:{type:String}
             }
 
 
