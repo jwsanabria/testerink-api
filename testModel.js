@@ -31,7 +31,24 @@ var testSchema = mongoose.Schema({
                 requiered: true
             },
             run_vrt: Boolean,
-            test_path: String
+            test_path: String,
+            apk_path: String,
+            generate_data: Boolean,
+            package_name: String,
+            ​​​
+            screenshot_pairs: [
+                {
+                    before:String,
+                    after:String,
+                    result:String
+                }
+            ],
+            ​​​
+            vrt_config: {
+                past_execution_id:String
+            }
+
+
         }
     ], 
     create_date: {
