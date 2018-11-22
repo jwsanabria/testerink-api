@@ -44,7 +44,8 @@ var testSchema = mongoose.Schema({
             ],
             vrt_config: {
                 past_execution_id:{type:String}
-            }
+            },
+            stryker_conf_path: String
 
 
         }
