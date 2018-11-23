@@ -11,6 +11,10 @@ var testSchema = mongoose.Schema({
         required: true,
         enum: ['Web','Movil']
     },
+    title: {
+        type: String,
+        rquired:true
+    },
     tests: [
         {
             id_test: {
