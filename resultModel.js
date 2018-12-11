@@ -33,6 +33,10 @@ var resultSchema = mongoose.Schema({
         type: String,
         required: false
     }, 
+    path_vrt:{
+        type:String,
+        required: false
+    },
     create_date: {
         type: Date,
         default: Date.now
